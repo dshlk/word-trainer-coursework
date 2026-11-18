@@ -9,7 +9,7 @@ export default defineConfig([
   {
     ignores: ["coverage/", "dist/", "node_modules/"]
   },
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'coverage']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -20,6 +20,11 @@ export default defineConfig([
     ],
     languageOptions: {
       globals: globals.browser,
+    },
+    rules: {
+      "semi": ["error", "never"],
+      "indent": ["error", 2],
+      "no-multiple-empty-lines": ["error", { "max": 1 }]
     },
   },
 ])
