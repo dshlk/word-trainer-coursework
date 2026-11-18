@@ -49,3 +49,6 @@ npm run test:coverage
 
 ### Страница прогресса
 ![Прогресс](images/progress.png)
+
+### Страница настроек
+![Настройки](images/settings.png)

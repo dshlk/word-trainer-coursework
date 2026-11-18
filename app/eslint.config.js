@@ -21,7 +21,12 @@ export default defineConfig([
     rules: {
       "semi": ["error", "never"],
       "indent": ["error", 2],
-      "no-multiple-empty-lines": ["error", { "max": 1 }]
-    },
+      "no-multiple-empty-lines": ["error", { "max": 1 }],
+      "padded-blocks": ["error", "never"],
+      "padding-line-between-statements": [
+        "error",
+        { blankLine: "always", prev: "*", next: "return" }
+      ]
+    }
   }
 ])

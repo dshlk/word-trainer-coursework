@@ -1,21 +1,19 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Navigation } from './components/Navigation'
 import { HomePage } from './pages/HomePage'
 import { StudyPage } from './pages/StudyPage'
 import { ProgressPage } from './pages/ProgressPage'
+import { SettingsPage } from './pages/SettingsPage'
 
 function App() {
   return (
     <BrowserRouter>
-      <nav style={{ padding: '20px', display: 'flex', gap: '20px', borderBottom: '1px solid #ccc' }}>
-        <Link to="/">Главная</Link>
-        <Link to="/study">Изучение</Link>
-        <Link to="/progress">Прогресс</Link>
-      </nav>
-      
+      <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/progress" element={<ProgressPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </BrowserRouter>
   )
