@@ -4,11 +4,9 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import importPlugin from 'eslint-plugin-import'
 
 export default defineConfig([
-  {
-    ignores: ["coverage/", "dist/", "node_modules/"]
-  },
   globalIgnores(['dist', 'coverage']),
   {
     files: ['**/*.{ts,tsx}'],
@@ -21,6 +19,9 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    plugins: {
+      import: importPlugin,
+    },
     rules: {
       "semi": ["error", "never"],
       "indent": ["error", 2],
@@ -28,8 +29,11 @@ export default defineConfig([
       "padded-blocks": ["error", "never"],
       "padding-line-between-statements": [
         "error",
-        { blankLine: "always", prev: "*", next: "return" }
-      ]
+        { blankLine: "always", prev: "*", next: "return" },
+        { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+        { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] }
+      ],
+      "import/order": "error" 
     }
-  },
+  }
 ])

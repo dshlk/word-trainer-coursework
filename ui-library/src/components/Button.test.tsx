@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { Button } from './Button'
 import { describe, test, expect, jest } from '@jest/globals'
+import { Button } from './Button'
 
 describe('Button', () => {
   test('отображает текст', () => {
@@ -10,6 +10,7 @@ describe('Button', () => {
 
   test('вызывает onClick при клике', () => {
     const handleClick = jest.fn()
+
     render(<Button onClick={handleClick}>Кнопка</Button>)
     fireEvent.click(screen.getByText('Кнопка'))
     expect(handleClick).toHaveBeenCalledTimes(1)
