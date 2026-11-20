@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import { Navigation } from './components/Navigation'
 import { HomePage } from './pages/HomePage'
-import { StudyPage } from './pages/StudyPage'
 import { ProgressPage } from './pages/ProgressPage'
 import { SettingsPage } from './pages/SettingsPage'
+import { StudyPage } from './pages/StudyPage'
 
 function App() {
   return (

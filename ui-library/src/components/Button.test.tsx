@@ -1,5 +1,6 @@
-import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, test, expect, jest } from '@jest/globals'
+import { render, screen, fireEvent } from '@testing-library/react'
+
 import { Button } from './Button'
 
 describe('Button', () => {
