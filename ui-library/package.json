@@ -1,11 +1,16 @@
 {
-  "name": "ui-library",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@my-app/ui-library",
+  "version": "1.0.0",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist --jsx react-jsx --module esnext --moduleResolution bundler --allowImportingTsExtensions --skipLibCheck --ignoreConfig",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest",
@@ -22,7 +27,7 @@
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",

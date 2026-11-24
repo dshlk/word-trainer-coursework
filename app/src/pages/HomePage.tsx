@@ -1,6 +1,5 @@
+import { Button } from '@my-app/ui-library'
 import { Link } from 'react-router-dom'
-
-import { Button } from '../../../ui-library/src'
 
 export const HomePage = () => {
   return (

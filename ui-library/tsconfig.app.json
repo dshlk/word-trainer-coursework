@@ -13,14 +13,18 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
     "jsx": "react-jsx",
+    "rootDir": "./src",
 
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Генерация типов */
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist"
   },
   "include": ["src"]
 }
